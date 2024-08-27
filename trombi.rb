@@ -7,7 +7,9 @@ require 'rubyXL/convenience_methods'
 $tex_deb = 'trombi_temp_deb'
 $tex_fin = 'trombi_temp_fin'
 $latex_file = 'trombi_acdi.tex'
+$images_dir = 'images/'
 
+$president = "Président"
 $bureau = "Bureau"
 $membres = "Membres"
 
@@ -40,7 +42,7 @@ def extract_info(xlsx_file, onglet)
         infos = {
           nom: cap(row[0].value.strip),
           prenom: cap(row[1].value.strip),
-          iut: row[2].value.strip,
+          iut: cap(row[2].value.strip),
           mail: row[3].value.strip,
           photo: row[4].value.strip
         }
@@ -70,7 +72,7 @@ def latex_generate_section(titre, infos)
               "{#{i[:prenom]} #{i[:nom]}}" +
               "{#{i[:iut]}}" +
               "{#{i[:mail]}}" +
-              "{#{i[:photo]}}"
+              "{#{$images_dir}#{i[:photo]}}"
   end
 end
 
@@ -84,8 +86,9 @@ end
 
 def latex_generate(file)
   latex_generate_deb
-  latex_generate_section($bureau, extract_info(file, 0))
-  latex_generate_section($membres, extract_info(file, 1))
+  latex_generate_section($president, extract_info(file, 0))
+  latex_generate_section($bureau, extract_info(file, 1))
+  latex_generate_section($membres, extract_info(file, 2))
   latex_generate_fin
 end
 
