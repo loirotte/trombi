@@ -17,7 +17,7 @@ $latex = ""
 
 # Pour la capitalisation avancée (!)
 def cap(str)
-  str.gsub(/\S+/, &:capitalize)
+  str.gsub(/[\wçù]+/, &:capitalize)
 end
 
 # Extraction des informations
@@ -96,7 +96,7 @@ end
 
 def dump_and_compile
   File.open($latex_file, "w") { |f| f << $latex }
-  puts `lualatex #{$latex_file}`
+  puts `xelatex #{$latex_file}`
 end
 
 # #####################################
