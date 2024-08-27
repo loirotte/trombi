@@ -45,7 +45,7 @@
       \includegraphics[width=.7\linewidth]{#4}\\
     % \end{center}
     \textbf{#1}\\
-    IUT de #2\\
+    IUT #2\\
     \href{mailto:#3}{#3}
   \end{minipage}
 }
