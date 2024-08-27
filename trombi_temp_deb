@@ -1,0 +1,62 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{setspace}
+
+% Gestion de polices OpenType avec XeTeX, gestion de l'Unicode
+%\RequirePackage{fontspec,xltxtra,xunicode}
+
+\RequirePackage{fontspec,xltxtra}
+
+\newcommand{\fontscustom}{
+        \defaultfontfeatures{Mapping=tex-text}
+        \defaultfontfeatures{Ligatures=TeX}
+	\setmainfont{Linux Libertine O}
+	\setsansfont{Linux Libertine O}
+	% \setsansfont{Liberation Sans}
+	% \setmonofont[Scale=.9]{Ubuntu Mono}
+	\setmonofont[Scale=.8]{UbuntuMono-Regular}
+	\newfontfamily{\hwfont}{Comic Sans MS}
+	\newfontfamily{\fatfont}{Arial Black}
+	\newfontfamily{\authorfont}{Liberation Serif}
+	\newfontfamily{\spacefont}{Liberation Mono}
+        \fontspec[SmallCapsFont={Arial Black}]{Arial Black}
+}
+\fontscustom
+
+\date{}
+\title{}
+\hypersetup{pdflang={French}}
+
+%%% Les marges
+\usepackage{vmargin}
+\setpapersize{A4}
+%%% Signification des parametres :
+%%% \setmargins{leftmargin}{topmargin}{textwidth}{textheight}%
+%%%    {headheight}{headsep}{footheight}{footskip}
+%%% Ici les 4 derniers parametres sont par defaut a 0
+%%% Mais vous pouvez tres bien leur donner une valeur non nulle
+\setmargins{20 mm}{15 mm}{170 mm}{260 mm}{0pt}{0mm}{0pt}{1.2cm}
+
+\newcommand{\entry}[4]{
+  \begin{minipage}[t]{.33\linewidth}
+    \singlespacing
+    % \begin{center}
+      \includegraphics[width=.7\linewidth]{#4}\\
+    % \end{center}
+    \textbf{#1}\\
+    IUT de #2\\
+    \href{mailto:#3}{#3}
+  \end{minipage}
+}
+
+% Pas de retrait première ligne
+\setlength{\parindent}{0mm}
+
+
+\begin{document}
+
+\centerline{\LARGE \textbf{Composition de l'ACDI Informatique}}
+\vspace*{1cm}
+
+\doublespacing
