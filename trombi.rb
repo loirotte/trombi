@@ -15,7 +15,7 @@ $latex = ""
 
 # Pour la capitalisation avancée (!)
 def cap(str)
-  str.gsub(/\w+/, &:capitalize)
+  str.gsub(/\S+/, &:capitalize)
 end
 
 # Extraction des informations
