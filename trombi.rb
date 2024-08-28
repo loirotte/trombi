@@ -104,7 +104,7 @@ end
 
 def dump_and_compile
   File.open($latex_file, "w") { |f| f << $latex }
-  puts `xelatex #{$latex_file}`
+  puts `make`
 end
 
 # #####################################
