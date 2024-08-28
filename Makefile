@@ -7,3 +7,5 @@ all: $(TARGET)
 $(TARGET): $(SOURCE)
 	$(COMPILER) $(SOURCE)
 
+clean:
+	rm -f *.out *.aux *.log
