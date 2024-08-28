@@ -43,8 +43,9 @@ def extract_info(xlsx_file, onglet)
           nom: cap(row[0].value.strip),
           prenom: cap(row[1].value.strip),
           iut: cap(row[2].value.strip),
-          mail: row[3].value.strip,
-          photo: row[4].value.strip
+          act: (row[3].value.strip == "non")? false : true,
+          mail: row[4].value.strip,
+          photo: row[5].value.strip
         }
         people << infos
       end
@@ -79,6 +80,7 @@ def latex_generate_section(titre, infos)
               "{#{i[:prenom]}}" +
               "{#{i[:nom]}}" +
               "{#{i[:iut]}}" +
+              "{#{' \protect\finMandat' if !i[:act]}}" +
               "{#{i[:mail]}}" +
               "{#{$images_dir}#{i[:photo]}}"
   end
