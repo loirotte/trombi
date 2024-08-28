@@ -39,14 +39,14 @@
 \setmargins{20 mm}{15 mm}{170 mm}{260 mm}{0pt}{0mm}{0pt}{1.2cm}
 
 \newcommand{\entry}[4]{
-  \begin{minipage}[t]{.33\linewidth}
+  \begin{minipage}[t]{.25\linewidth}
     \singlespacing
     % \begin{center}
-      \includegraphics[width=.7\linewidth]{#4}\\
+    \includegraphics[width=.7\linewidth]{#4}\\
     % \end{center}
-    \textbf{#1}\\
-    IUT #2\\
-    \href{mailto:#3}{#3}
+    \textbf{\small #1}\\
+    {\small IUT #2}\\
+    {\small \href{mailto:#3}{#3}}
   \end{minipage}
 }
 
@@ -56,7 +56,6 @@
 
 \begin{document}
 
-\centerline{\LARGE \textbf{Composition de l'ACDI Informatique}}
-\vspace*{1cm}
-
-\doublespacing
+\centerline{\includegraphics[height=1.8cm]{acdi.jpg}}
+\vspace{3mm}
+\centerline{\LARGE \textbf{Composition de l'ACD Informatique}}
