@@ -76,7 +76,8 @@ def latex_generate_section(titre, infos)
 
   infos.each do |i|
     $latex += "\n\\entry" +
-              "{#{i[:prenom]} #{i[:nom]}}" +
+              "{#{i[:prenom]}}" +
+              "{#{i[:nom]}}" +
               "{#{i[:iut]}}" +
               "{#{i[:mail]}}" +
               "{#{$images_dir}#{i[:photo]}}"

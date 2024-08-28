@@ -3,6 +3,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{setspace}
+\usepackage{makeidx}
 
 % Gestion de polices OpenType avec XeTeX, gestion de l'Unicode
 \RequirePackage{fontspec,xltxtra}
@@ -35,21 +36,22 @@
 %%% Mais vous pouvez tres bien leur donner une valeur non nulle
 \setmargins{20 mm}{15 mm}{170 mm}{260 mm}{0pt}{0mm}{0pt}{1.2cm}
 
-\newcommand{\entry}[4]{
+\newcommand{\entry}[5]{
   \begin{minipage}[t]{.25\linewidth}
     \singlespacing
     % \begin{center}
-    \includegraphics[width=.7\linewidth]{#4}\\
+    \includegraphics[width=.7\linewidth]{#5}\\
     % \end{center}
-    \textbf{\small #1}\\
-    {\small IUT #2}\\
-    {\small \href{mailto:#3}{#3}}
+    \textbf{\small #1 #2}\index{#2 #1 (#3)}\\
+    {\small IUT #3}\index{#3 (#1 #2)}\\
+    {\small \href{mailto:#4}{#4}}
   \end{minipage}
 }
 
 % Pas de retrait première ligne
 \setlength{\parindent}{0mm}
 
+\makeindex
 
 \begin{document}
 
