@@ -4,8 +4,8 @@ require 'fileutils'
 require 'rubyXL'
 require 'rubyXL/convenience_methods'
 
-$tex_deb = 'trombi_temp_deb'
-$tex_fin = 'trombi_temp_fin'
+$tex_deb = 'trombi_temp_deb.tex'
+$tex_fin = 'trombi_temp_fin.tex'
 $latex_file = 'trombi_acdi.tex'
 $images_dir = 'images/'
 
