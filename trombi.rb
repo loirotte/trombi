@@ -17,7 +17,7 @@ $latex = ""
 
 # Pour la capitalisation avancée (!)
 def cap(str)
-  str.gsub(/[\wçù]+/, &:capitalize)
+  str.gsub(/[\wçùéè]+/, &:capitalize)
 end
 
 # Extraction des informations
@@ -62,10 +62,17 @@ def latex_generate_deb
   $latex += IO.read($tex_deb)
 end
 
+# Génération de la date
+
+def latex_generate_date(date)
+  $latex += "\n\\centerline{\\emph{Version du #{date}}}\n"
+  $latex += "\\doublespacing\n"
+end
+
 # Génération d'une section Latex
 
 def latex_generate_section(titre, infos)
-  $latex += "\n\n\\vspace*{1cm}\n\\section*{#{titre}}\n\n"
+  $latex += "\n\n\\vspace*{5mm}\n\\section*{#{titre}}\n\n"
 
   infos.each do |i|
     $latex += "\n\\entry" +
@@ -84,8 +91,9 @@ end
 
 # Génération LaTeX
 
-def latex_generate(file)
+def latex_generate(file, date)
   latex_generate_deb
+  latex_generate_date date
   latex_generate_section($president, extract_info(file, 0))
   latex_generate_section($bureau, extract_info(file, 1))
   latex_generate_section($membres, extract_info(file, 2))
@@ -103,11 +111,11 @@ end
 # P R O G R A M M E   P R I N C I P A L
 # #####################################
 
-if ARGV.length != 1
-  puts "Usage: #{$0} <liste_xlsx>"
+if ARGV.length != 2
+  puts "Usage: #{$0} <liste_xlsx> <date>"
   exit
 end
 
-latex_generate ARGV[0]
+latex_generate ARGV[0], ARGV[1]
 dump_and_compile
 
