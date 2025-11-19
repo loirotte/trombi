@@ -1,8 +1,7 @@
 #!/usr/bin/ruby -wU
 
 require 'fileutils'
-require 'rubyXL'
-require 'rubyXL/convenience_methods'
+require 'yaml'
 
 $tex_deb = 'trombi_temp_deb.tex'
 $tex_fin = 'trombi_temp_fin.tex'
@@ -18,43 +17,6 @@ $latex = ""
 # Pour la capitalisation avancée (!)
 def cap(str)
   str.gsub(/[\wçùéè]+/, &:capitalize)
-end
-
-# Extraction des informations
-
-def extract_info(xlsx_file, onglet)
-  workbook = RubyXL::Parser.parse(xlsx_file)
-  worksheet = workbook[onglet]                # Choix onglet
-
-  people = []
-
-  # Extraction
-  # ligne début = 0 (entête généralement)
-  lig = 1
-  parse_sheet = true
-
-  while parse_sheet
-    row = worksheet[lig]
-    if row
-      if !row[0]
-        parse_sheet = false
-      else
-        infos = {
-          nom: cap(row[0].value.strip),
-          prenom: cap(row[1].value.strip),
-          iut: cap(row[2].value.strip),
-          act: (row[3].value.strip == "non")? false : true,
-          mail: row[4].value.strip,
-          photo: row[5].value.strip
-        }
-        people << infos
-      end
-    else
-      parse_sheet = false
-    end
-    lig += 1
-  end
-  people
 end
 
 # Entête du document LaTeX
@@ -80,7 +42,7 @@ def latex_generate_section(titre, infos)
               "{#{i[:prenom]}}" +
               "{#{i[:nom]}}" +
               "{#{i[:iut]}}" +
-              "{#{' \protect\finMandat' if !i[:act]}}" +
+              "{#{'\protect\finMandat' if !i[:actif]}}" +
               "{#{i[:mail]}}" +
               "{#{$images_dir}#{i[:photo]}}"
   end
@@ -95,19 +57,20 @@ end
 # Génération LaTeX
 
 def latex_generate(file, date)
+  data = YAML.safe_load_file(file, symbolize_names: true)
+
   latex_generate_deb
   latex_generate_date date
-  latex_generate_section($president, extract_info(file, 0))
-  latex_generate_section($bureau, extract_info(file, 1))
-  latex_generate_section($membres, extract_info(file, 2))
+  latex_generate_section($president, data[:president])
+  latex_generate_section($bureau, data[:bureau])
+  latex_generate_section($membres, data[:membres])
   latex_generate_fin
 end
 
 # Création du fichier LaTeX et compilation
 
-def dump_and_compile
+def dump
   File.open($latex_file, "w") { |f| f << $latex }
-  puts `make`
 end
 
 # #####################################
@@ -120,5 +83,5 @@ if ARGV.length != 2
 end
 
 latex_generate ARGV[0], ARGV[1]
-dump_and_compile
+dump
 
