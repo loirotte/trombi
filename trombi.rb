@@ -32,6 +32,25 @@ def latex_generate_date(date)
   $latex += "\\doublespacing\n"
 end
 
+# Récupération de l'icône de discipline
+
+def domain(code)
+  case code
+  when 'I'
+    '\symbinfo '
+  when 'M'
+    '\symbmath '
+  when 'C'
+    '\symbcom '
+  when 'E'
+    '\symbego '
+  when 'A'
+    '\symbang '
+  else
+    ''
+  end
+end
+
 # Génération d'une section Latex
 
 def latex_generate_section(titre, infos)
@@ -44,7 +63,9 @@ def latex_generate_section(titre, infos)
               "{#{i[:iut]}}" +
               "{#{'\protect\finMandat' if !i[:actif]}}" +
               "{#{i[:mail]}}" +
-              "{#{$images_dir}#{i[:photo]}}"
+              "{#{$images_dir}#{i[:photo]}}" +
+              "{#{domain(i[:domaine])}}"
+              
   end
 end
 

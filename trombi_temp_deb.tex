@@ -25,6 +25,11 @@
 \usepackage{fontawesome}
 \usepackage{xspace}
 \newcommand{\finMandat}{\faSignOut\xspace}
+\newcommand{\symbinfo}{\includegraphics[width=2.1ex]{ordi.png}\xspace}
+\newcommand{\symbcom}{\includegraphics[width=2ex]{expcom.png}\xspace}
+\newcommand{\symbmath}{\includegraphics[width=2.1ex]{math.png}\xspace}
+\newcommand{\symbego}{\includegraphics[width=2.1ex]{ego.png}\xspace}
+\newcommand{\symbang}{\includegraphics[width=2.2ex]{anglais.png}\xspace}
 
 \date{}
 \title{}
@@ -40,17 +45,20 @@
 %%% Mais vous pouvez tres bien leur donner une valeur non nulle
 \setmargins{20 mm}{15 mm}{170 mm}{260 mm}{0pt}{0mm}{0pt}{1.2cm}
 
-\newcommand{\entry}[6]{
+\newcommand{\entry}[7]{
   \begin{minipage}[t]{.25\linewidth}
     \singlespacing
     % \begin{center}
     \includegraphics[width=.7\linewidth]{#6}\\
     % \end{center}
-    \textbf{\small #1 #2 #4}\index{#2 #1 (#3) #4}\\
+    \textbf{\small #1 #2 #7 #4}\index{#2 #1 (#3) #4}\\
     {\small IUT #3}\index{#3 (#1 #2) #4}\\
     {\small \href{mailto:#5}{#5}}
   \end{minipage}
 }
+
+\usepackage[hang]{footmisc}
+\setlength{\footnotemargin}{0pt}
 
 % Pour la légende
 \makeatletter
@@ -63,7 +71,11 @@
 \makeindex
 
 \begin{document}
-\blfootnote{\finMandat : personne ayant terminé son mandat de Chef de Département.}
+\blfootnote{\finMandat : personne ayant terminé son mandat de Chef de
+  Département.\\\symbinfo~: informatique, \symbmath~: mathématiques,
+  \symbcom~: expression\,/\,communication, \symbego~:
+  économie\,/\,gestion, \symbang~: anglais.
+  }
 
 \centerline{\includegraphics[height=1.8cm]{acdi.jpg}}
 \vspace{3mm}
