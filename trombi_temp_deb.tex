@@ -1,9 +1,16 @@
 \documentclass{article}
 
 \usepackage{graphicx}
-\usepackage{hyperref}
+\usepackage[
+    colorlinks=true,      % active la coloration des liens
+    linkcolor=blue,       % couleur des liens internes (table des matières, etc.)
+    urlcolor=blue,        % couleur des URL
+    citecolor=blue,       % couleur des citations
+    filecolor=blue        % couleur des liens de fichiers
+]{hyperref}
 \usepackage{setspace}
 \usepackage{makeidx}
+\usepackage{xspace}
 
 % Gestion de polices OpenType avec XeTeX, gestion de l'Unicode
 \RequirePackage{fontspec,xltxtra}
