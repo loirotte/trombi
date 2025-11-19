@@ -1,0 +1,246 @@
+# Quelques explications
+#
+# iut: La ville de l'IUT
+# actif (true/false): actuellement chef(fe) -> pour le bureau essentiellement
+# domaine: une discipline parmi
+#   info : I
+#   math : M
+#   com : C
+#   ego : E
+#   anglais : A
+#   inconnu : U(nknown)
+# 
+president:
+  - nom: Garcia
+    prenom: Francis
+    iut: Montpellier
+    actif: true
+    mail: francis.garcia@umontpellier.fr
+    photo: Bureau_Montpellier_GARCIA.jpg
+    domaine: I
+bureau:
+  - nom: Bouhours
+    prenom: Cédric
+    iut: Clermont-Ferrand
+    actif: true
+    mail: cedric.bouhours@uca.fr
+    photo: anc_Bureau_Clermont_BOUHOURS.jpg
+    domaine: I
+  - nom: Deletombe
+    prenom: Marie
+    iut: Lille
+    actif: false
+    mail: marie.deletombe@univ-lille.fr
+    photo: anc_Bureau_Lille_DELETOMBE.jpg
+    domaine: C
+  - nom: Dosch
+    prenom: Philippe
+    iut: Nancy-Charlemagne
+    actif: true
+    mail: philippe.dosch@univ-lorraine.fr
+    photo: Bureau_Nancy_DOSCH.jpg
+    domaine: I
+  - nom: Dubacq
+    prenom: Jean-Christophe
+    iut: Villetaneuse
+    actif: false
+    mail: jean-christophe.dubacq@univ-paris13.fr
+    photo: anc_Bureau_Villetaneuse_DUBACQ.jpg
+    domaine: I
+  - nom: Farang-Hariri
+    prenom: Banafsheh
+    iut: Orsay
+    actif: true
+    mail: banafsheh.hariri@universite-paris-saclay.fr
+    photo: Bureau_Orsay_BANAFSHEH.jpg
+    domaine: M
+  - nom: Farrugia
+    prenom: Jean-Philippe
+    iut: BOURG-EN-BRESSE
+    actif: false
+    mail: jean-philippe.farrugia@univ-lyon1.fr
+    photo: anc_Bureau_Bourg_FARRUGIA.jpg
+    domaine: E
+  - nom: Fernandez
+    prenom: Marguerite
+    iut: Calais
+    actif: false
+    mail: marguerite.fernandez@univ-littoral.fr
+    photo: Bureau_Calais_FERNANDEZ.jpg
+    domaine: A
+membres:
+  - nom: Makssoud
+    prenom: Christine
+    iut: Aix-En-Provence
+    actif: true
+    mail: christine.makssoud@univ-amu.fr
+    photo: Aix_MAKSSOUD.jpg
+    domaine: 
+  - nom: Couturier
+    prenom: Vincent
+    iut: Annecy
+    actif: true
+    mail: vincent.couturier@univ-smb.fr
+    photo: Annecy_COUTURIER.jpg
+    domaine: 
+  - nom: Dias Da Fonseca
+    prenom: Guilerme
+    iut: Arles
+    actif: true
+    mail: guilherme.dias-da-fonseca@univ-amu.fr
+    photo: Arles_DIAS_DE_FONSECA.jpg
+    domaine: 
+  - nom: Marquesuzaà
+    prenom: Christophe
+    iut: Bayonne
+    actif: true
+    mail: chef-info@iutbayonne.univ-pau.fr
+    photo: anc_Bayonne_MARQUESUZAA.jpg
+    domaine: 
+  - nom: Salomon
+    prenom: Michel
+    iut: Belfort
+    actif: true
+    mail: michel.salomon@univ-fcomte.fr
+    photo: Belfort_SALOMON.jpg
+    domaine: 
+  - nom: Dutour
+    prenom: Isabelle
+    iut: Bordeaux
+    actif: true
+    mail: isabelle.dutour@u-bordeaux.fr
+    photo: Bordeaux_DUTOUR.jpg
+    domaine: 
+  - nom: Madelaine
+    prenom: Florent
+    iut: Fontainebleau
+    actif: true
+    mail: florent.madelaine@u-pec.fr
+    photo: anc_Fontainebleau_MADELAINE.jpg
+    domaine: 
+  - nom: Ammar-Boudjelal
+    prenom: Farid
+    iut: La Rochelle
+    actif: true
+    mail: farid.ammarboudjelal@univ-lr.fr
+    photo: anc_Rochelle_AMMAR-BOUDJELAL.jpg
+    domaine: 
+  - nom: De Villeneuve
+    prenom: Bertrand
+    iut: Lannion
+    actif: true
+    mail: bertrand.de-villeneuve@univ-rennes.fr
+    photo: Lannion_DE_VILLENEUVE.jpg
+    domaine: 
+  - nom: Roulin
+    prenom: Olivier
+    iut: Laval
+    actif: true
+    mail: olivier.roulin@univ-lemans.fr
+    photo: Laval_ROULIN.jpg
+    domaine: 
+  - nom: Charrier
+    prenom: Rodolphe
+    iut: Le Havre
+    actif: true
+    mail: rodolphe.charrier@univ-lehavre.fr
+    photo: Havre_CHARRIER.jpg
+    domaine: 
+  - nom: Hemery
+    prenom: Fred
+    iut: Lens
+    actif: true
+    mail: fred.hemery@univ-artois.fr
+    photo: anc_Lens_HEMERY.jpg
+    domaine: 
+  - nom: Cessy
+    prenom: David
+    iut: Marne-La-Vallée
+    actif: true
+    mail: david.cessy@univ-eiffel.fr
+    photo: Marne_CESSY.jpg
+    domaine: 
+  - nom: Jean
+    prenom: Christophe
+    iut: Martinique
+    actif: true
+    mail: christophe.jean@univ-antilles.fr
+    photo: anc_Martinique_JEAN.jpg
+    domaine: 
+  - nom: Vion
+    prenom: Julien
+    iut: Maubeuge
+    actif: true
+    mail: julien.vion@uphf.fr
+    photo: Maubeuge_VION.jpg
+    domaine: 
+  - nom: Spengler
+    prenom: Anne
+    iut: Metz
+    actif: true
+    mail: anne.spengler@univ-lorraine.fr
+    photo: anc_Metz_SPENGLER.jpg
+    domaine: 
+  - nom: Trombettoni
+    prenom: Gilles
+    iut: Montpellier
+    actif: true
+    mail: gilles.trombettoni@lirmm.fr
+    photo: anc_Montpellier_TROMBETTONI.jpg
+    domaine: 
+  - nom: Ricordeau
+    prenom: Anne
+    iut: Montreuil
+    actif: true
+    mail: a.ricordeau@iut.univ-paris8.fr
+    photo: Montreuil_RICORDEAU.jpg
+    domaine: 
+  - nom: Lanoix Bauer
+    prenom: Arnaud
+    iut: Nantes
+    actif: true
+    mail: arnaud.lanoix@univ-nantes.fr
+    photo: Nantes_LANOIX_BAUER.jpg
+    domaine: 
+  - nom: Cleuziou
+    prenom: Guillaume
+    iut: Orléans
+    actif: true
+    mail: cd-info.iut45@univ.orleans.fr
+    photo: anc_Orleans_CLEUZIOU.jpg
+    domaine: 
+  - nom: Chalençon
+    prenom: Sylvia
+    iut: Reims
+    actif: true
+    mail: sylvia.chalencon@univ-reims.fr
+    photo: Reims_CHALENCON.jpg
+    domaine: 
+  - nom: Palosse
+    prenom: Mathieu
+    iut: Rodez
+    actif: true
+    mail: mathieu.palosse@iut-rodez.fr
+    photo: Rodez_PALOSSE.jpg
+    domaine: 
+  - nom: Zimmermann
+    prenom: Mathieu
+    iut: Strasbourg
+    actif: true
+    mail: ma.zimmermann@unistra.fr
+    photo: Strasbourg_ZIMMERMAN.jpg
+    domaine: 
+  - nom: Boughanem
+    prenom: Mohand
+    iut: Toulouse
+    actif: true
+    mail: bougha@irit.fr
+    photo: anc_Toulouse_BOUGHANEM.jpg
+    domaine: 
+  - nom: Osmani
+    prenom: Aomar
+    iut: Villetaneuse
+    actif: true
+    mail: Aomar.osmani@univ-paris13.fr
+    photo: anc_Villetaneuse_OSMANI.jpg
+    domaine: 
